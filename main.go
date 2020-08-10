@@ -8,6 +8,6 @@ import (
 func main(){
 	for true  {
 		fmt.Println(time.Now())
-		time.Sleep(100000000)
+		time.Sleep(time.Second)
 	}
 }
