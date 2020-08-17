@@ -2,7 +2,6 @@ FROM golang:1.13 as build
 ENV  GOPROXY=https://goproxy.cn
 ENV  GO111MODULE=on
 ADD .  /go/src/pipeline-demo
-#RUN go get "github.com/gin-gonic/gin"
 WORKDIR /go/src/pipeline-demo
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  -o /home/pipeline-demo main.go
 
