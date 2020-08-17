@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"time"
+	"github.com/gin-gonic/gin"
 )
 
 func main(){
-	for true  {
-		fmt.Println(time.Now())
-		time.Sleep(time.Second)
-	}
+	engine := gin.New()
+	engine.GET("/", func(context *gin.Context) {
+		context.JSON(200,"This is a demo")
+	})
+	_ = engine.Run(":80")
 }
